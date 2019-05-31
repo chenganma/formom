@@ -38,8 +38,26 @@ class App extends React.Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = event => { 
+
     event.preventDefault();
+
+    if(this.refs.name.value === '1') {
+    	//let name = this.refs.role.value;
+    	console.log('1');
+    }
+    if(this.refs.name.value === '2') {
+    	//let name = 'pop';
+    	console.log('2');
+    }
+    if(this.refs.name.value === '3') {
+    	//let name = 'pop';
+    	console.log('3');
+    }
+    if(this.refs.name.value === '4') {
+    	//let name = 'pop';
+    	console.log('4');
+    }
     let name = this.refs.name.value;
     let role = this.refs.role.value;
     let uid = this.refs.uid.value;
@@ -80,6 +98,14 @@ class App extends React.Component {
 
   render() {
     const { developers } = this.state;
+
+    var date = new Date().getDate(); //Current Date
+    var month = new Date().getMonth() + 1; //Current Month
+    var year = new Date().getFullYear(); //Current Year
+    var hours = new Date().getHours(); //Current Hours
+    var min = new Date().getMinutes(); //Current Minutes
+    const timestamp = month + '/' + date + '/' + year + ' ' + hours + ':' + min;
+
     return (
       <React.Fragment>
         <div className="container">
@@ -96,16 +122,42 @@ class App extends React.Component {
                       type="text"
                       ref="name"
                       className="form-control"
-                      placeholder="Name"
+                      value="1"
                     />
                   </div>
                   <div className="form-group col-md-6">
-                    <label>Role</label>
+                    <label>Time</label>
                     <input
                       type="text"
                       ref="role"
                       className="form-control"
-                      value={this.state.date}
+                      value={timestamp}
+                    />
+                  </div>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Save
+                </button>
+              </form>
+              <form onSubmit={this.handleSubmit}>
+                <div className="form-row">
+                  <input type="hidden" ref="uid" />
+                  <div className="form-group col-md-6">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      ref="name"
+                      className="form-control"
+                      value="2"
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label>Time</label>
+                    <input
+                      type="text"
+                      ref="role"
+                      className="form-control"
+                      value={timestamp}
                     />
                   </div>
                 </div>
