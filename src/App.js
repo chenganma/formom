@@ -42,22 +42,23 @@ class App extends React.Component {
 
     event.preventDefault();
 
-    if(this.refs.name.value === '1') {
-    	//let name = this.refs.role.value;
-    	console.log('1');
-    }
-    if(this.refs.name.value === '2') {
-    	//let name = 'pop';
-    	console.log('2');
-    }
-    if(this.refs.name.value === '3') {
-    	//let name = 'pop';
-    	console.log('3');
-    }
-    if(this.refs.name.value === '4') {
-    	//let name = 'pop';
-    	console.log('4');
-    }
+    // if(this.refs.name.value === '1') {
+    // 	//let name = this.refs.role.value;
+    // 	console.log('1');
+    // }
+    // if(this.refs.name.value === '2') {
+    // 	//let name = 'pop';
+    // 	console.log(this.refs.name.value);
+    // 	console.log('2');
+    // }
+    // if(this.refs.name.value === '3') {
+    // 	//let name = 'pop';
+    // 	console.log('3');
+    // }
+    // if(this.refs.name.value === '4') {
+    // 	//let name = 'pop';
+    // 	console.log('4');
+    // }
     let name = this.refs.name.value;
     let role = this.refs.role.value;
     let uid = this.refs.uid.value;
@@ -118,38 +119,12 @@ class App extends React.Component {
                   <input type="hidden" ref="uid" />
                   <div className="form-group col-md-6">
                     <label>Name</label>
-                    <input
-                      type="text"
-                      ref="name"
-                      className="form-control"
-                      value="1"
-                    />
-                  </div>
-                  <div className="form-group col-md-6">
-                    <label>Time</label>
-                    <input
-                      type="text"
-                      ref="role"
-                      className="form-control"
-                      value={timestamp}
-                    />
-                  </div>
-                </div>
-                <button type="submit" className="btn btn-primary">
-                  Save
-                </button>
-              </form>
-              <form onSubmit={this.handleSubmit}>
-                <div className="form-row">
-                  <input type="hidden" ref="uid" />
-                  <div className="form-group col-md-6">
-                    <label>Name</label>
-                    <input
-                      type="text"
-                      ref="name"
-                      className="form-control"
-                      value="2"
-                    />
+                    <select ref="name" className="form-control">
+		               <option value="poo">poo</option>
+                       <option value="pee">pee</option>
+                       <option value="pump">pump</option>
+                       <option value="feed">feed</option>
+                    </select>
                   </div>
                   <div className="form-group col-md-6">
                     <label>Time</label>
